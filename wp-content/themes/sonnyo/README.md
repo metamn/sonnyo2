@@ -9,5 +9,5 @@
 3. Add vue cli webpack
 4. Do code
 5. Build
-6. Copy `dist/index.html` content to `index.php` and replace `/static` with `<?php get_template_directory_uri() ?>/static/dist`
+6. In `index.php` update the `css` and `js` filenames like `app.bf9a994c72151daa5e919b0f3ccdc900.css` with values generated at the build
 7. Voila
