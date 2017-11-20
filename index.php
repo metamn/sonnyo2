@@ -1,17 +1,26 @@
-<?php
-/**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
-
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define('WP_USE_THEMES', true);
-
-/** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . '/wp-blog-header.php' );
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+  <div id="app">
+  <?php
+    
+  if ( have_posts() ) :
+  while ( have_posts() ) : the_post();
+  
+    echo '<article'; post_class(); echo '>' . PHP_EOL;
+    the_title('<h2>','</h2>');
+    the_content();
+    echo '</article>' . PHP_EOL;
+  
+  endwhile;  
+  endif;
+  
+  ?>
+  </div>
+  <?php wp_footer(); ?>
+</body>
+</html>
