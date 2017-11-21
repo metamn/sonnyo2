@@ -9,5 +9,7 @@
 3. Add vue cli webpack
 4. Do code
 5. Build
-6. In `index.php` update the `css` and `js` filenames like `app.bf9a994c72151daa5e919b0f3ccdc900.css` with values generated at the build
+6. Copy `dist/index.html` content to `index.php` and replace `/static` with `<?php echo get_template_directory_uri() ?>/dist/static`
 7. Voila
+
+Notes: The "welcome to Vue" text is displayed, with a quick flash, then disappears. In dev mode is all fine ...
